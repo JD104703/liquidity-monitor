@@ -13,7 +13,8 @@ def fetch_series(code, start):
     error = None
     for attempt in range(3):
         try:
-            request = Request(url, headers={'User-Agent':'LiquidityMonitor/1.0'})
+            # 일반 윈도우 크롬 브라우저에서 접속하는 것처럼 User-Agent를 길게 변경합니다.
+            request = Request(url, headers={'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'})
             with urlopen(request, timeout=35) as response:
                 data = pd.read_csv(BytesIO(response.read()), na_values=['.'])
             if code not in data or len(data.columns) < 2:
@@ -36,7 +37,8 @@ def fetch_series(code, start):
 
 def download_series(series, start):
     downloaded = {}
-    with ThreadPoolExecutor(max_workers=4) as pool:
+    # 한 번에 1개씩만 안전하게 다운로드하도록 변경합니다.
+    with ThreadPoolExecutor(max_workers=1) as pool:
         pending = {pool.submit(fetch_series, code, start):name for name,code in series.items()}
         for task in as_completed(pending):
             name = pending[task]
