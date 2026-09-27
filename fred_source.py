@@ -13,9 +13,16 @@ def fetch_series(code, start):
     error = None
     for attempt in range(3):
         try:
-            # 일반 윈도우 크롬 브라우저에서 접속하는 것처럼 User-Agent를 길게 변경합니다.
-            request = Request(url, headers={'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'})
-            with urlopen(request, timeout=35) as response:
+            # 더 완벽하게 브라우저처럼 위장하는 헤더
+            headers = {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'Accept': 'text/csv,application/csv;q=0.9,*/*;q=0.8',
+                'Accept-Language': 'en-US,en;q=0.9',
+                'Referer': 'https://fred.stlouisfed.org/'
+            }
+            request = Request(url, headers=headers)
+            # 연결 지연 시 15분씩 끌지 않도록 타임아웃을 10초로 단축
+            with urlopen(request, timeout=10) as response:
                 data = pd.read_csv(BytesIO(response.read()), na_values=['.'])
             if code not in data or len(data.columns) < 2:
                 raise ValueError(f'{code}: unexpected CSV columns')
