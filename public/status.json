@@ -1,0 +1,120 @@
+{
+  "generated_at": "2026-09-27T07:14:51.605023+00:00",
+  "observations": [
+    {
+      "name": "Real10Y",
+      "fred_series": "DFII10",
+      "observation_date": "2026-09-24"
+    },
+    {
+      "name": "Treasury2Y",
+      "fred_series": "DGS2",
+      "observation_date": "2026-09-24"
+    },
+    {
+      "name": "Treasury10Y",
+      "fred_series": "DGS10",
+      "observation_date": "2026-09-24"
+    },
+    {
+      "name": "Treasury30Y",
+      "fred_series": "DGS30",
+      "observation_date": "2026-09-24"
+    },
+    {
+      "name": "FedAssets",
+      "fred_series": "WALCL",
+      "observation_date": "2026-09-23"
+    },
+    {
+      "name": "TGA",
+      "fred_series": "WTREGEN",
+      "observation_date": "2026-09-23"
+    },
+    {
+      "name": "RRP",
+      "fred_series": "RRPONTSYD",
+      "observation_date": "2026-09-25"
+    },
+    {
+      "name": "BankLoans",
+      "fred_series": "TOTLL",
+      "observation_date": "2026-09-16"
+    },
+    {
+      "name": "Reserves",
+      "fred_series": "WRESBAL",
+      "observation_date": "2026-09-23"
+    },
+    {
+      "name": "M2",
+      "fred_series": "M2SL",
+      "observation_date": "2026-08-01"
+    },
+    {
+      "name": "UNRATE",
+      "fred_series": "UNRATE",
+      "observation_date": "2026-08-01"
+    },
+    {
+      "name": "ICSA",
+      "fred_series": "ICSA",
+      "observation_date": "2026-09-19"
+    },
+    {
+      "name": "CCSA",
+      "fred_series": "CCSA",
+      "observation_date": "2026-09-12"
+    },
+    {
+      "name": "PAYEMS",
+      "fred_series": "PAYEMS",
+      "observation_date": "2026-08-01"
+    },
+    {
+      "name": "USDJPY",
+      "fred_series": "DEXJPUS",
+      "observation_date": "2026-09-18"
+    },
+    {
+      "name": "VIX",
+      "fred_series": "VIXCLS",
+      "observation_date": "2026-09-22"
+    },
+    {
+      "name": "Nikkei225",
+      "fred_series": "NIKKEI225",
+      "observation_date": "2026-09-25"
+    },
+    {
+      "name": "Sahm",
+      "fred_series": "SAHMREALTIME",
+      "observation_date": "2026-08-01"
+    },
+    {
+      "name": "JapanCall",
+      "fred_series": "IRSTCI01JPM156N",
+      "observation_date": "2026-08-01"
+    },
+    {
+      "name": "HYOAS",
+      "fred_series": "BAMLH0A0HYM2",
+      "observation_date": "2026-09-24"
+    },
+    {
+      "name": "SOFR",
+      "fred_series": "SOFR",
+      "observation_date": "2026-09-24"
+    },
+    {
+      "name": "IORB",
+      "fred_series": "IORB",
+      "observation_date": "2026-09-28"
+    },
+    {
+      "name": "STLFSI",
+      "fred_series": "STLFSI4",
+      "observation_date": "2026-09-18"
+    }
+  ]
+}
